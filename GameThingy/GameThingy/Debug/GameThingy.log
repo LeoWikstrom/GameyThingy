@@ -1,0 +1,15 @@
+﻿  Player.cpp
+c:\users\leo\desktop\gamethingy\gamethingy\gamethingy\player.cpp(56): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\leo\desktop\gamethingy\gamethingy\gamethingy\player.cpp(60): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\leo\desktop\gamethingy\gamethingy\gamethingy\player.cpp(76): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\leo\desktop\gamethingy\gamethingy\gamethingy\player.cpp(80): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\leo\desktop\gamethingy\gamethingy\gamethingy\player.cpp(97): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\leo\desktop\gamethingy\gamethingy\gamethingy\player.cpp(101): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\leo\desktop\gamethingy\gamethingy\gamethingy\player.cpp(118): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\leo\desktop\gamethingy\gamethingy\gamethingy\player.cpp(122): warning C4305: '=': truncation from 'double' to 'float'
+  main.cpp
+  Game.cpp
+  Generating Code...
+  LINK : C:\Users\Leo\Desktop\GameThingy\GameThingy\Debug\GameThingy.exe not found or not built by the last incremental link; performing full link
+  GameThingy.vcxproj -> C:\Users\Leo\Desktop\GameThingy\GameThingy\Debug\GameThingy.exe
+  GameThingy.vcxproj -> C:\Users\Leo\Desktop\GameThingy\GameThingy\Debug\GameThingy.pdb (Full PDB)
