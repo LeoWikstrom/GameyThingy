@@ -17,7 +17,6 @@ Enemy::Enemy(float speed, int view, int health, int damage, int value, sf::Vecto
 	this->speed = speed;
 	this->view = view;
 
-
 	srand(time(NULL));
 }
 
@@ -26,8 +25,31 @@ Enemy::~Enemy()
 {
 }
 
-void Enemy::collision()
+void Enemy::collision(float dt, bool isFullscreen)
 {
+	if (isFullscreen && !wasFullscreen)
+	{
+		this->speed *= 10.f;
+	}
+	else if (!isFullscreen && wasFullscreen)
+	{
+		this->speed *= 0.1f;
+	}
+
+	wasFullscreen = isFullscreen;
+
+	if (this->directionX == 1)
+		this->sprite.move(-speed*dt, 0);
+
+	else if (this->directionY == 1)
+		this->sprite.move(0, -speed*dt);
+
+	else if (this->directionX == -1)
+		this->sprite.move(speed*dt, 0);
+
+	else if (this->directionY == -1)
+		this->sprite.move(0, speed*dt);
+
 	this->directionX *= -1;
 	this->directionY *= -1;
 }

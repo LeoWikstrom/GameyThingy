@@ -20,6 +20,7 @@ Object::Object()
 	}
 	this->sprite.setTexture(spriteTexture);
 	this->sprite.setTextureRect(sf::IntRect(0, 0, this->keyFrameSize.x, this->keyFrameSize.y));
+	//this->sprite.setScale(sf::Vector2f(10, 10));
 	this->sprite.setPosition(startPosition);
 }
 
@@ -50,23 +51,27 @@ sf::FloatRect Object::BoundingBox()
 	return this->sprite.getGlobalBounds();
 }
 
+void Object::reset(bool isFullscreen)
+{
+	if(isFullscreen)
+		this->sprite.setPosition(this->startPosition.x * 10, this->startPosition.y * 10);
+	else
+		this->sprite.setPosition(this->startPosition.x, this->startPosition.y);
+	this->currentKeyFrame = sf::Vector2i(0, 0);
+}
+
+
 void Object::Update(float dt, bool isFullscreen)
 {
-	if (isFullscreen)
+	if (isFullscreen && !wasFullscreen)
 	{
-		if (!wasFullscreen)
-		{
-			this->sprite.setScale(10, 10);
-			this->sprite.setPosition(this->sprite.getPosition().x * 10, this->sprite.getPosition().y * 10);
-		}
+		this->sprite.setScale(10, 10);
+		this->sprite.setPosition(this->sprite.getPosition().x * 10, this->sprite.getPosition().y * 10);
 	}
-	else
+	else if (!isFullscreen && wasFullscreen)
 	{
-		if (wasFullscreen)
-		{
-			this->sprite.setScale(1, 1);
-			this->sprite.setPosition(this->sprite.getPosition().x / 10, this->sprite.getPosition().y / 10);
-		}
+		this->sprite.setScale(1, 1);
+		this->sprite.setPosition(this->sprite.getPosition().x / 10, this->sprite.getPosition().y / 10);
 	}
 
 	wasFullscreen = isFullscreen;

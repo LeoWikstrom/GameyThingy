@@ -1,14 +1,37 @@
 ﻿  CollisionHandler.cpp
-  Consumable.cpp
-  Enemy.cpp
-d:\documents\github\gameythingy\gameythingy\enemy.cpp(21): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Game.cpp
-d:\documents\github\gameythingy\gameythingy\game.cpp(29): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+d:\documents\github\gameythingy\gameythingy\collisionhandler.cpp(30): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=float
           ]
-d:\documents\github\gameythingy\gameythingy\game.cpp(33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          and
+          [
+              T=int
+          ]
+d:\documents\github\gameythingy\gameythingy\collisionhandler.cpp(35): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+  Consumable.cpp
+  Enemy.cpp
+d:\documents\github\gameythingy\gameythingy\enemy.cpp(20): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Game.cpp
+d:\documents\github\gameythingy\gameythingy\game.cpp(20): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\documents\github\gameythingy\gameythingy\game.cpp(44): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\documents\github\gameythingy\gameythingy\game.cpp(49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float

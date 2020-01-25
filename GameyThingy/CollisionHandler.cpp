@@ -17,24 +17,29 @@ CollisionHandler::~CollisionHandler()
 {
 }
 
-sf::Vector2i CollisionHandler::checkForCollision()
+int CollisionHandler::checkForCollision(int collisionIndexes[], bool isFullscreen) const
 {
-	sf::Vector2i collisionIndex(-1, -1);
+	int collisionIndent = 2;
+	if (isFullscreen)
+		collisionIndent = 20;
 
+	sf::IntRect collisionRectI, collisionRectN;
+	int pos = 0, nrOfCollisions = 0;
 	for (int i = 0; i < nrOfObjects; i++)
 	{
-		for (int n = 1; n < nrOfObjects; n++)
+		collisionRectI = sf::IntRect(objects[i]->BoundingBox().left + collisionIndent, objects[i]->BoundingBox().top + collisionIndent, objects[i]->BoundingBox().width - collisionIndent, objects[i]->BoundingBox().height - collisionIndent);
+ 		for (int n = 0; n < nrOfObjects; n++)
 		{
 			if (i != n)
 			{
-				if (objects[i]->BoundingBox().intersects(objects[n]->BoundingBox()))
+				collisionRectN = sf::IntRect(objects[n]->BoundingBox().left + collisionIndent, objects[n]->BoundingBox().top + collisionIndent, objects[n]->BoundingBox().width - collisionIndent, objects[n]->BoundingBox().height - collisionIndent);
+				if (collisionRectI.intersects(collisionRectN))
 				{
-					collisionIndex.x = i;
-					collisionIndex.y = n;
+					collisionIndexes[pos++] = i;
+					nrOfCollisions += 1;
 				}
 			}
 		}
 	}
-
-	return collisionIndex;
+	return nrOfCollisions;
 }

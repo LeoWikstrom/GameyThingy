@@ -19,7 +19,7 @@ private:
 
 	bool wasFullscreen = false;
 
-	Weapon weapon;
+	//Weapon weapon;
 
 public:
 	Player();
@@ -34,7 +34,7 @@ public:
 	~Player();
 
 	void Update(float dt, bool isFullscreen);
-	void collision();
+	void collision(float dt, bool isFullscreen);
 };
 
 

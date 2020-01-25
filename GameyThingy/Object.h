@@ -25,18 +25,20 @@ private:
 public:
 	Object();
 	Object(sf::Vector2i keyFrameSize,
-	sf::Vector2i spriteSheetSize,
-	sf::Vector2i currentKeyFrame,
-	sf::Vector2f startPosition,
-	float animationSpeed,
-	float keyFrameDuration,
+		sf::Vector2i spriteSheetSize,
+		sf::Vector2i currentKeyFrame,
+		sf::Vector2f startPosition,
+		float animationSpeed,
+		float keyFrameDuration,
 		std::string fileName);
 
 	virtual ~Object();
 
 	sf::FloatRect BoundingBox();
+	void reset(bool isFullscreen);
 
 	virtual void Update(float dt, bool isFullscreen);
+	virtual void collision(float dt, bool isFullscreen) = 0;
 
 };
 

@@ -29,7 +29,7 @@ public:
 		std::string fileName);
 	~Enemy();
 
-	void collision();
+	void collision(float dt, bool isFullscreen);
 	void Update(float dt, bool isFullscreen);
 };
 

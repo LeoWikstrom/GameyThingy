@@ -7,7 +7,7 @@ int main()
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
 	Game game;
-	sf::RenderWindow window(sf::VideoMode(192, 108), "Game Window");
+	sf::RenderWindow window(sf::VideoMode(192, 108), "Game Window", sf::Style::Close);
 	bool isFullscreen = false;
 	sf::Clock gameTime;
 	window.setKeyRepeatEnabled(false);
@@ -30,7 +30,7 @@ int main()
 			}
 			else
 			{
-				window.create(sf::VideoMode(192, 108), "Game Window");
+				window.create(sf::VideoMode(192, 108), "Game Window", sf::Style::Close);
 				isFullscreen = false;
 			}
 		}

@@ -15,7 +15,7 @@ public:
 	CollisionHandler(Object** objects, int nrOfObjects);
 	~CollisionHandler();
 
-	sf::Vector2i checkForCollision();
+	int checkForCollision(int collisionIndexes[], bool isFullscreen) const;
 };
 
 #endif // !COLL_H

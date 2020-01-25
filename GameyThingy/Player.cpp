@@ -26,19 +26,13 @@ Player::~Player()
 
 void Player::Update(float dt, bool isFullscreen)
 {
-	if (isFullscreen)
+	if (isFullscreen && !wasFullscreen)
 	{
-		if (!wasFullscreen)
-		{
-			this->speed *= 10.f;
-		}
+		this->speed *= 10.f;
 	}
-	if (!isFullscreen)
+	else if (!isFullscreen && wasFullscreen)
 	{
-		if (wasFullscreen)
-		{
-			this->speed *= 0.1f;
-		}
+		this->speed *= 0.1f;
 	}
 
 	this->Object::Update(dt, isFullscreen);
@@ -51,28 +45,28 @@ void Player::Update(float dt, bool isFullscreen)
 	bool isSpressed = sf::Keyboard::isKeyPressed(sf::Keyboard::S);
 	bool isDpressed = sf::Keyboard::isKeyPressed(sf::Keyboard::D);
 
-	if (isWpressed && !isApressed && !isDpressed) //Move up
+	if (isWpressed && !isApressed && !isDpressed && !isSpressed) //Move up
 	{
 		if (!wasWpressed)
 			this->currentKeyFrame.x = 0;
 		this->currentKeyFrame.y = 1;
 		this->sprite.move(0, -speed*dt);
 	}
-	else if (isApressed && !isWpressed && !isSpressed) //Move left
+	else if (isApressed && !isWpressed && !isSpressed && !isDpressed) //Move left
 	{
 		if (!wasApressed)
 			this->currentKeyFrame.x = 0;
 		this->currentKeyFrame.y = 3;
 		this->sprite.move(-speed*dt, 0);
 	}
-	else if (isSpressed && !isApressed && !isDpressed) //Move down
+	else if (isSpressed && !isApressed && !isDpressed && !isWpressed) //Move down
 	{
 		if (!wasSpressed)
 			this->currentKeyFrame.x = 0;
 		this->currentKeyFrame.y = 0;
 		this->sprite.move(0, speed*dt);
 	}
-	else if (isDpressed && !isWpressed && !isSpressed) //Move right
+	else if (isDpressed && !isWpressed && !isSpressed && !isApressed) //Move right
 	{
 		if (!wasDpressed)
 			this->currentKeyFrame.x = 0;
@@ -119,6 +113,24 @@ void Player::Update(float dt, bool isFullscreen)
 			this->currentKeyFrame.y = 0;
 		this->sprite.move(sqrt(pow(speed, 2) / 2)*dt, sqrt(pow(speed, 2) / 2)*dt);
 	}
+	else if (isApressed && isDpressed)
+	{
+		if (!wasApressed && !wasDpressed)
+			this->currentKeyFrame.x = 0;
+		if (!wasApressed)
+			this->currentKeyFrame.y = 2;
+		if (!wasDpressed)
+			this->currentKeyFrame.y = 3;
+	}
+	else if (isWpressed && isSpressed)
+	{
+		if (!wasWpressed && !wasSpressed)
+			this->currentKeyFrame.x = 0;
+		if (!wasWpressed)
+			this->currentKeyFrame.y = 0;
+		if (!wasSpressed)
+			this->currentKeyFrame.y = 1;
+	}
 	else
 	{
 		this->currentKeyFrame.x = 4;
@@ -153,37 +165,45 @@ void Player::Update(float dt, bool isFullscreen)
 	}
 }
 
-void Player::collision()
+void Player::collision(float dt, bool isFullscreen)
 {
+	if (isFullscreen && !wasFullscreen)
+	{
+		this->speed *= 10.f;
+	}
+	else if (!isFullscreen && wasFullscreen)
+	{
+		this->speed *= 0.1f;
+	}
+
+	wasFullscreen = isFullscreen;
+
 	bool isWpressed = sf::Keyboard::isKeyPressed(sf::Keyboard::W);
 	bool isApressed = sf::Keyboard::isKeyPressed(sf::Keyboard::A);
 	bool isSpressed = sf::Keyboard::isKeyPressed(sf::Keyboard::S);
 	bool isDpressed = sf::Keyboard::isKeyPressed(sf::Keyboard::D);
 
-	if (isDpressed && !isWpressed && !isSpressed)
-		this->sprite.setPosition(this->sprite.getPosition() - sf::Vector2f(1, 0));
+	if (isDpressed && !isWpressed && !isSpressed && !isApressed)
+		this->sprite.move(-speed*dt, 0);
 
-	else if (isSpressed && !isApressed && !isDpressed)
-		this->sprite.setPosition(this->sprite.getPosition() - sf::Vector2f(0, 1));
+	else if (isSpressed && !isApressed && !isDpressed && !isWpressed)
+		this->sprite.move(0, -speed*dt);
 
-	else if (isApressed && !isWpressed && !isSpressed)
-		this->sprite.setPosition(this->sprite.getPosition() + sf::Vector2f(1, 0));
+	else if (isApressed && !isWpressed && !isSpressed && !isDpressed)
+		this->sprite.move(speed*dt, 0);
 
-	else if (isWpressed && !isApressed && !isDpressed)
-		this->sprite.setPosition(this->sprite.getPosition() + sf::Vector2f(0, 1));
+	else if (isWpressed && !isApressed && !isDpressed && !isSpressed)
+		this->sprite.move(0, speed*dt);
 
 	else if (isSpressed && isDpressed)
-		this->sprite.setPosition(this->sprite.getPosition() - sf::Vector2f(1, 1));
+		this->sprite.move(-sqrt(pow(speed, 2) / 2)*dt, -sqrt(pow(speed, 2) / 2)*dt);
 
 	else if (isWpressed && isApressed)
-		this->sprite.setPosition(this->sprite.getPosition() + sf::Vector2f(1, 1));
+		this->sprite.move(sqrt(pow(speed, 2) / 2)*dt, sqrt(pow(speed, 2) / 2)*dt);
 
 	else if (isWpressed && isDpressed)
-		this->sprite.setPosition(this->sprite.getPosition() - sf::Vector2f(1, -1));
+		this->sprite.move(-sqrt(pow(speed, 2) / 2)*dt, sqrt(pow(speed, 2) / 2)*dt);
 
 	else if (isSpressed && isApressed)
-		this->sprite.setPosition(this->sprite.getPosition() + sf::Vector2f(1, -1));
-
-	else 
-		this->sprite.setPosition(this->sprite.getPosition() + sf::Vector2f(0, 1));
+		this->sprite.move(sqrt(pow(speed, 2) / 2)*dt, -sqrt(pow(speed, 2) / 2)*dt);
 }
