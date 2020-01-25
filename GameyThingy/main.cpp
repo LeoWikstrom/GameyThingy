@@ -12,6 +12,7 @@ int main()
 	sf::Clock gameTime;
 	window.setKeyRepeatEnabled(false);
 	float FPS;
+	float dt;
 
 	while (window.isOpen())
 	{
@@ -35,7 +36,7 @@ int main()
 			}
 		}
 		
-		float dt = gameTime.restart().asSeconds();
+		dt = gameTime.restart().asSeconds();
 		if (window.hasFocus())
 		{
 			FPS = 1 / dt;

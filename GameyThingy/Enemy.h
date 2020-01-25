@@ -9,17 +9,21 @@ class Enemy : public Obstacle
 {
 private:
 	float speed;
-	int view;
+	int startHealth;
 	int directionX;
 	int directionY;
 
 	sf::Clock moveTimer;
+	sf::Clock hurtTimer;
 
 	bool wasFullscreen = false;
+	bool playerDetected = false;
+	bool isCollision = false;
+	bool isKilled = false;
 
 public:
 	Enemy();
-	Enemy(float speed, int view, int health, int damage, int value,
+	Enemy(float speed, int health, int damage, int value,
 		sf::Vector2i keyFrameSize,
 		sf::Vector2i spriteSheetSize,
 		sf::Vector2i currentKeyFrame,
@@ -29,7 +33,9 @@ public:
 		std::string fileName);
 	~Enemy();
 
-	void collision(float dt, bool isFullscreen);
+	void reset(bool isFullscreen);
+	void detectPlayer(int posDifX, int posDifY);
+	void collision(float dt, bool isFullscreen, int collisionType);
 	void Update(float dt, bool isFullscreen);
 };
 

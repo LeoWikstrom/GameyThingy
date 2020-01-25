@@ -24,6 +24,21 @@ Obstacle::~Obstacle()
 {
 }
 
+int Obstacle::getHealth() const
+{
+	return this->health;
+}
+
+void Obstacle::setHealth(int health)
+{
+	this->health = health;
+}
+
+int Obstacle::getValue() const
+{
+	return this->value;
+}
+
 void Obstacle::Update(float dt, bool isFullscreen)
 {
 	this->Object::Update(dt, isFullscreen);

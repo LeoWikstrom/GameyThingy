@@ -21,6 +21,9 @@ public:
 		std::string fileName);
 	~Obstacle();
 
+	int getHealth() const;
+	void setHealth(int health);
+	int getValue() const;
 	void Update(float dt, bool isFullscreen);
 };
 

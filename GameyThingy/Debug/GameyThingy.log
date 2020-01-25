@@ -8,7 +8,7 @@ d:\documents\github\gameythingy\gameythingy\collisionhandler.cpp(30): warning C4
           [
               T=int
           ]
-d:\documents\github\gameythingy\gameythingy\collisionhandler.cpp(35): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+d:\documents\github\gameythingy\gameythingy\collisionhandler.cpp(33): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=float
@@ -17,15 +17,51 @@ d:\documents\github\gameythingy\gameythingy\collisionhandler.cpp(35): warning C4
           [
               T=int
           ]
+d:\documents\github\gameythingy\gameythingy\collisionhandler.cpp(50): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+d:\documents\github\gameythingy\gameythingy\collisionhandler.cpp(68): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+d:\documents\github\gameythingy\gameythingy\collisionhandler.cpp(71): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\documents\github\gameythingy\gameythingy\collisionhandler.cpp(72): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
   Consumable.cpp
   Enemy.cpp
-d:\documents\github\gameythingy\gameythingy\enemy.cpp(20): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+d:\documents\github\gameythingy\gameythingy\enemy.cpp(19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Game.cpp
+  Highscore.cpp
+d:\documents\github\gameythingy\gameythingy\highscore.cpp(20): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\documents\github\gameythingy\gameythingy\highscore.cpp(74): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\documents\github\gameythingy\gameythingy\highscore.cpp(82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Item.cpp
   main.cpp
   Object.cpp
   Obstacle.cpp
   Player.cpp
+d:\documents\github\gameythingy\gameythingy\player.cpp(288): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\documents\github\gameythingy\gameythingy\player.cpp(290): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\documents\github\gameythingy\gameythingy\player.cpp(292): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\documents\github\gameythingy\gameythingy\player.cpp(294): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Weapon.cpp
   Generating Code...
   GameyThingy.vcxproj -> D:\Documents\GitHub\GameyThingy\Debug\GameyThingy.exe

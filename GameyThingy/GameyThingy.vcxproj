@@ -152,6 +152,7 @@
     <ClCompile Include="Consumable.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Highscore.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Object.cpp" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Consumable.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Highscore.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Obstacle.h" />

@@ -9,9 +9,19 @@ private:
 	int value;
 public:
 	Item();
+	Item(int duration, int value,
+		sf::Vector2i keyFrameSize,
+		sf::Vector2i spriteSheetSize,
+		sf::Vector2i currentKeyFrame,
+		sf::Vector2f startPosition,
+		float animationSpeed,
+		float keyFrameDuration,
+		std::string fileName);
 	~Item();
 
 	void Update(float dt, bool isFullscreen);
+	void collision(float dt, bool isFullscreen);
+	void detectPlayer(int posDifX, int posDifY);
 };
 
 

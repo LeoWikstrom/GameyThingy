@@ -1,6 +1,21 @@
-﻿  Player.cpp
+﻿  Weapon.cpp
+j:\eddie\gameythingy-v0.5\gameythingy\object.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Player.cpp
+j:\eddie\gameythingy-v0.5\gameythingy\object.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Obstacle.cpp
+j:\eddie\gameythingy-v0.5\gameythingy\object.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   Object.cpp
+j:\eddie\gameythingy-v0.5\gameythingy\object.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   main.cpp
+j:\eddie\gameythingy-v0.5\gameythingy\main.cpp(1): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Item.cpp
+j:\eddie\gameythingy-v0.5\gameythingy\object.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   Game.cpp
+j:\eddie\gameythingy-v0.5\gameythingy\game.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Enemy.cpp
+j:\eddie\gameythingy-v0.5\gameythingy\object.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Consumable.cpp
+j:\eddie\gameythingy-v0.5\gameythingy\object.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  CollisionHandler.cpp
+j:\eddie\gameythingy-v0.5\gameythingy\collisionhandler.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   Generating Code...
-sfml-graphics-d.lib(sfml-graphics-d-2.dll) : fatal error LNK1112: module machine type 'X86' conflicts with target machine type 'x64'

@@ -60,7 +60,6 @@ void Object::reset(bool isFullscreen)
 	this->currentKeyFrame = sf::Vector2i(0, 0);
 }
 
-
 void Object::Update(float dt, bool isFullscreen)
 {
 	if (isFullscreen && !wasFullscreen)
@@ -88,4 +87,43 @@ void Object::Update(float dt, bool isFullscreen)
 
 		this->keyFrameDuration = 0;
 	}
+}
+
+void Object::detectPlayer(int posDifX, int posDifY)
+{
+}
+
+void Object::setCurrentKeyFrameX(int keyFrame)
+{
+	this->currentKeyFrame.x = keyFrame;
+}
+
+void Object::setCurrentKeyFrameY(int keyFrame)
+{
+	this->currentKeyFrame.y = keyFrame;
+}
+
+int Object::getCurrentKeyFrameX() const
+{
+	return this->currentKeyFrame.x;
+}
+
+int Object::getCurrentKeyFrameY() const
+{
+	return this->currentKeyFrame.y;
+}
+
+sf::Vector2f Object::getStartPosition() const
+{
+	return this->startPosition;
+}
+
+void Object::setSprite(const sf::Sprite & sprite)
+{
+	this->sprite = sprite;
+}
+
+sf::Sprite* Object::getSprite()
+{
+	return &this->sprite;
 }

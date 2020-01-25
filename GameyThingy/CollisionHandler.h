@@ -3,6 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 #include "Object.h"
+#include "Player.h"
+#include "Enemy.h"
 
 class CollisionHandler
 {
@@ -15,7 +17,7 @@ public:
 	CollisionHandler(Object** objects, int nrOfObjects);
 	~CollisionHandler();
 
-	int checkForCollision(int collisionIndexes[], bool isFullscreen) const;
+	bool checkForCollision(float dt, bool isFullscreen, int & enemyValue) const;
 };
 
 #endif // !COLL_H
