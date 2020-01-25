@@ -2,6 +2,8 @@
 #define PLAYER_H
 
 #include "Object.h"
+#include "Weapon.h"
+
 class Player :	public Object
 {
 private:
@@ -9,15 +11,15 @@ private:
 	int health;
 	int score;
 
-	bool wasFullscreen = false;
 
 	bool wasWpressed = false;
 	bool wasApressed = false;
 	bool wasSpressed = false;
 	bool wasDpressed = false;
 
-	sf::Clock runTime;
-	//Weapon weapon
+	bool wasFullscreen = false;
+
+	Weapon weapon;
 
 public:
 	Player();
@@ -32,6 +34,7 @@ public:
 	~Player();
 
 	void Update(float dt, bool isFullscreen);
+	void collision();
 };
 
 

@@ -20,7 +20,6 @@ Object::Object()
 	}
 	this->sprite.setTexture(spriteTexture);
 	this->sprite.setTextureRect(sf::IntRect(0, 0, this->keyFrameSize.x, this->keyFrameSize.y));
-	//this->sprite.setScale(sf::Vector2f(10, 10));
 	this->sprite.setPosition(startPosition);
 }
 
@@ -39,7 +38,6 @@ Object::Object(sf::Vector2i keyFrameSize, sf::Vector2i spriteSheetSize, sf::Vect
 	}
 	this->sprite.setTexture(spriteTexture);
 	this->sprite.setTextureRect(sf::IntRect(0, 0, this->keyFrameSize.x, this->keyFrameSize.y));
-	this->sprite.setScale(sf::Vector2f(10, 10));
 	this->sprite.setPosition(startPosition);
 }
 
@@ -47,8 +45,32 @@ Object::~Object()
 {
 }
 
-void Object::Update(float dt)
+sf::FloatRect Object::BoundingBox()
 {
+	return this->sprite.getGlobalBounds();
+}
+
+void Object::Update(float dt, bool isFullscreen)
+{
+	if (isFullscreen)
+	{
+		if (!wasFullscreen)
+		{
+			this->sprite.setScale(10, 10);
+			this->sprite.setPosition(this->sprite.getPosition().x * 10, this->sprite.getPosition().y * 10);
+		}
+	}
+	else
+	{
+		if (wasFullscreen)
+		{
+			this->sprite.setScale(1, 1);
+			this->sprite.setPosition(this->sprite.getPosition().x / 10, this->sprite.getPosition().y / 10);
+		}
+	}
+
+	wasFullscreen = isFullscreen;
+
 	this->keyFrameDuration += dt;
 	if (this->keyFrameDuration > this->animationSpeed)
 	{

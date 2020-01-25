@@ -1,13 +1,17 @@
 #include <SFML/Graphics.hpp>
 #include "Game.h"
+#include <crtdbg.h>
 
 int main()
 {
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
 	Game game;
 	sf::RenderWindow window(sf::VideoMode(192, 108), "Game Window");
 	bool isFullscreen = false;
 	sf::Clock gameTime;
 	window.setKeyRepeatEnabled(false);
+	float FPS;
 
 	while (window.isOpen())
 	{
@@ -30,10 +34,17 @@ int main()
 				isFullscreen = false;
 			}
 		}
-		game.Update(gameTime.restart().asSeconds(), isFullscreen);
-		window.clear();
-		window.draw(game);
-		window.display();
+		
+		float dt = gameTime.restart().asSeconds();
+		if (window.hasFocus())
+		{
+			FPS = 1 / dt;
+			//std::cout << FPS << std::endl;
+			game.Update(dt, isFullscreen);
+			window.clear();
+			window.draw(game);
+			window.display();
+		}
 	}
 
 	return 0;

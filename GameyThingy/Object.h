@@ -18,6 +18,8 @@ private:
 	float animationSpeed;
 	float keyFrameDuration;
 
+	bool wasFullscreen = false;
+
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 public:
@@ -32,7 +34,9 @@ public:
 
 	virtual ~Object();
 
-	virtual void Update(float dt);
+	sf::FloatRect BoundingBox();
+
+	virtual void Update(float dt, bool isFullscreen);
 
 };
 

@@ -1,0 +1,23 @@
+﻿  CollisionHandler.cpp
+  Consumable.cpp
+  Enemy.cpp
+d:\documents\github\gameythingy\gameythingy\enemy.cpp(21): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Game.cpp
+d:\documents\github\gameythingy\gameythingy\game.cpp(29): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\documents\github\gameythingy\gameythingy\game.cpp(33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Item.cpp
+  main.cpp
+  Object.cpp
+  Obstacle.cpp
+  Player.cpp
+  Weapon.cpp
+  Generating Code...
+LINK : fatal error LNK1104: cannot open file 'sfml-graphics-d.lib'
