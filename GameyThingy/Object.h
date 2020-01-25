@@ -7,9 +7,6 @@
 
 class Object : public sf::Drawable
 {
-protected:
-	sf::Sprite sprite;
-	sf::Vector2i currentKeyFrame;
 private:
 	sf::Texture spriteTexture;
 	sf::Vector2i keyFrameSize;
@@ -40,6 +37,9 @@ public:
 	virtual void Update(float dt, bool isFullscreen);
 	virtual void collision(float dt, bool isFullscreen) = 0;
 
+
+	sf::Sprite sprite;
+	sf::Vector2i currentKeyFrame;
 };
 
 #endif // !OBJECT_H

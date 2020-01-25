@@ -21,21 +21,6 @@ d:\documents\github\gameythingy\gameythingy\collisionhandler.cpp(35): warning C4
   Enemy.cpp
 d:\documents\github\gameythingy\gameythingy\enemy.cpp(20): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Game.cpp
-d:\documents\github\gameythingy\gameythingy\game.cpp(20): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-d:\documents\github\gameythingy\gameythingy\game.cpp(44): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-d:\documents\github\gameythingy\gameythingy\game.cpp(49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
   Item.cpp
   main.cpp
   Object.cpp

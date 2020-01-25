@@ -15,6 +15,7 @@ private:
 	int collisionIndexes[15];
 	int nrOfHearts = 3;
 	int nrOfCollisions;
+	int score;
 	CollisionHandler collisions;
 
 	sf::Sprite back;
@@ -22,11 +23,17 @@ private:
 	sf::Sprite hearts[3];
 	sf::Texture heartTexture;
 
+	sf::Font font;
+	sf::Text showScore;
+	sf::Text pressSpace;
+
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 	bool wasFullscreen = false;
+	bool isPaused = false;
 
 	sf::Clock hurtTimer;
+	sf::Clock scoreTimer;
 
 public:
 	Game();

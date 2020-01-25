@@ -1,21 +1,6 @@
-﻿  CollisionHandler.cpp
-c:\users\leo\desktop\gameythingy - v0.4.1\gameythingy - v0.4.5\gameythingy\collisionhandler.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
-  Consumable.cpp
-c:\users\leo\desktop\gameythingy - v0.4.1\gameythingy - v0.4.5\gameythingy\object.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
-  Enemy.cpp
-c:\users\leo\desktop\gameythingy - v0.4.1\gameythingy - v0.4.5\gameythingy\object.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
-  Game.cpp
-c:\users\leo\desktop\gameythingy - v0.4.1\gameythingy - v0.4.5\gameythingy\game.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
-  Item.cpp
-c:\users\leo\desktop\gameythingy - v0.4.1\gameythingy - v0.4.5\gameythingy\object.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
-  main.cpp
-c:\users\leo\desktop\gameythingy - v0.4.1\gameythingy - v0.4.5\gameythingy\main.cpp(1): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+﻿  Player.cpp
   Object.cpp
-c:\users\leo\desktop\gameythingy - v0.4.1\gameythingy - v0.4.5\gameythingy\object.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
-  Obstacle.cpp
-c:\users\leo\desktop\gameythingy - v0.4.1\gameythingy - v0.4.5\gameythingy\object.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
-  Player.cpp
-c:\users\leo\desktop\gameythingy - v0.4.1\gameythingy - v0.4.5\gameythingy\object.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
-  Weapon.cpp
-c:\users\leo\desktop\gameythingy - v0.4.1\gameythingy - v0.4.5\gameythingy\object.h(4): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  main.cpp
+  Game.cpp
   Generating Code...
+sfml-graphics-d.lib(sfml-graphics-d-2.dll) : fatal error LNK1112: module machine type 'X86' conflicts with target machine type 'x64'
